@@ -43,7 +43,7 @@ figure {
 }
 
 .heading {
-  font-family: "STIX Two Text";
+  font-family: var(--accent-font, Helvetica, Arial, sans-serif);
   font-style: normal;
   font-weight: 600;
   line-height: 90%;
@@ -63,6 +63,7 @@ figure {
   padding: 20px clamp(1.125rem, 0rem + 5vw, 4.5rem);
   display: flex;
   flex-direction: row;
+  gap: 36px;
   justify-content: space-between;
   align-items: center;
   border-width: 1px 0px;
@@ -72,17 +73,21 @@ figure {
 
 .header__theme-toggler {
   display: flex;
-  gap: 20px;
+  gap: 17px;
   padding: 6px 0;
   list-style: none;
 }
 
 .header__theme-button {
+  padding: 0;
   border: none;
   font-family: inherit;
   background-color: inherit;
   color: currentColor;
   cursor: pointer;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 104%;
 }
 
 .header__theme-button:hover {
@@ -142,15 +147,7 @@ button:focus-visible {
 }
 
 .theme_dark .content__text-block_type_first-lettered:has(.content__paragraph)::first-letter {
-  background-color: var(--accent-color);
-  font-family: var(--main-font, Helvetica, Arial, sans-serif);
-  font-style: normal;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 35px;
   color: var(--text-color);
-  padding: 0 4px;
-  margin-right: 1px;
   border: 1px solid #b3b3b3;
 }
 
@@ -236,14 +233,7 @@ a:focus-visible {
 }
 
 .theme_dark .colored-text::after {
-  content: "";
-  position: absolute;
-  height: 0.25em;
-  width: 222px;
   background-image: url(../images/pattern.svg);
-  z-index: -1;
-  inset-inline-end: -2%;
-  inset-block-end: 20%;
 }
 
 .content__card-subtitle {
@@ -268,24 +258,13 @@ a:focus-visible {
   background-position: center;
   background-size: contain;
   inline-size: 15px;
-  block-size: 15px;
   display: block;
   position: absolute;
-  inset: 0 0 0 -24px;
+  inset: 2px 0 0 -24px;
 }
 
 .theme_dark .content__list__item::before {
-  content: "";
   background-image: url(./../images/marker-dark.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  inline-size: 15px;
-  block-size: 15px;
-  display: block;
-  position: absolute;
-  inset: 0 0 0 -20px;
 }
 
 .content__list__item:not(:last-of-type) {
